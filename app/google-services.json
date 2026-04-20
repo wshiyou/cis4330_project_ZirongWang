@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1001812440698",
+    "firebase_url": "https://airpresenter-default-rtdb.firebaseio.com",
+    "project_id": "airpresenter",
+    "storage_bucket": "airpresenter.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001812440698:android:bf0c2b4b06cf2b613c2dc3",
+        "android_client_info": {
+          "package_name": "com.example.airpresenter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNVRVBHfJ0ii42cG8ULBdd_IfZ-6wpN8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
