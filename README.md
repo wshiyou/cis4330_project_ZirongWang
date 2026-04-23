@@ -1,75 +1,93 @@
 # AirPresenter
 
-AirPresenter is a gesture-based presentation controller using smartphone sensors.  
-It allows users to control slides by moving their phone.
+AirPresenter is a real-time gesture-based presentation control system using smartphone sensors and machine learning.
+
+It allows users to control presentation slides by moving their phone, with cross-device communication between Android and a desktop system.
 
 ---
 
-## Features
+## ✨ Features
 
-- Swipe right → Next slide
-- Swipe left → Previous slide
-- Gesture ON/OFF toggle
-- Vibration feedback
-- Manual control buttons
+- Swipe right → Next slide  
+- Swipe left → Previous slide  
+- Gesture ON/OFF toggle  
+- Manual control buttons  
+- Real-time gesture recognition  
+- Vibration feedback  
+- Stability optimization (threshold, motion window, cooldown)
+- Supports both gesture-based interaction and manual button control
 
----
-
-## Screenshots
-
-### Gesture ON
-<img width="427" height="914" alt="image" src="https://github.com/user-attachments/assets/4addecdf-01e9-4912-b408-748013824d31" />
-
-
-
-### Gesture OFF
-<img width="430" height="916" alt="image" src="https://github.com/user-attachments/assets/ed4d1454-7474-4cea-9d3a-fbe1c9bbee8e" />
-
-
+<img width="1080" height="2400" alt="3f7eac47dbdc33206731f2496fc2fad8" src="https://github.com/user-attachments/assets/40612013-83ac-449d-9091-edc19d768c7b" />
+  
+<img width="1080" height="2400" alt="a4f8f4f5be20ac925ffeeefaf0d9b196" src="https://github.com/user-attachments/assets/21982cd2-da87-45f6-adaa-9c68e8a2b0e3" />
 
 ---
 
-## Tech Stack
+## 🧠 System Overview
+
+AirPresenter is an end-to-end system:
+
+- Android app collects sensor data (accelerometer + gyroscope)  
+- Data is sent to a Python server  
+- A machine learning model predicts the gesture (left, right, idle)  
+- Commands are sent to the desktop controller  
+- Desktop simulates keyboard input to control slides  
+
+---
+
+## 🛠️ Tech Stack
 
 - Android (Kotlin)
+- Python (Flask)
+- Machine Learning (KNN)
 - Firebase Realtime Database
-- Python (desktop controller)
+- pynput (keyboard control)
 
 ---
 
-## How to Run
+## ⚙️ How to Run
 
 ### 1. Android App
 
-1. Open the project in Android Studio
-2. Connect a real Android device (recommended)
-3. Click **Run**
-4. Enable sensors and vibration if needed
+- Open the project in Android Studio  
+- Connect a real Android device  
+- Click **Run**  
+- Enable sensors and vibration  
 
 ---
 
-### 2. Python Script (PC Side)
+### 2. Desktop Controller
 
-1. Make sure Python 3 is installed
-2. Install required libraries:
+- Make sure Python 3 is installed  
+- Install dependencies:
 
 ```bash
-pip install pynput firebase-admin
+pip install pynput firebase-admin flask joblib
+
+Place the .exe and .pkl model file in the same folder
+Run: python airPresenter.py
+
+3. Connect Devices
+Make sure both devices are on the same network
+Start the server and note the IP address
+Enter the IP address in the Android app
 
 
-Run the script:
-python airPresenter.py
+ How It Works
+The app continuously collects sensor data
+Motion is filtered using threshold detection
+Data is processed within a motion window
+The model predicts gestures using KNN
+Repeated predictions are required to trigger actions
+A cooldown mechanism prevents repeated triggers
+Users can either control slides using gestures or switch to manual button control for stability.
 
 
-### 3.How It Works
-The Android app detects gestures using the accelerometer
-It sends commands ("next", "prev") to Firebase
-The Python script listens for commands
-The Python script simulates keyboard input to control slides
 Notes
-Requires Android 7.0 or above
-Emulator may not support sensors or vibration
+Requires Android 7.0+
+Emulator may not support sensors
 Gesture OFF disables motion control
+Performance may vary depending on device sensitivity
 
 
 Author
