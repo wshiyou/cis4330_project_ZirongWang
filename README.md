@@ -17,9 +17,10 @@ It allows users to control presentation slides by moving their phone, with cross
 - Stability optimization (threshold, motion window, cooldown)
 - Supports both gesture-based interaction and manual button control
 
-<img width="1080" height="2400" alt="3f7eac47dbdc33206731f2496fc2fad8" src="https://github.com/user-attachments/assets/40612013-83ac-449d-9091-edc19d768c7b" />
-  
-<img width="1080" height="2400" alt="a4f8f4f5be20ac925ffeeefaf0d9b196" src="https://github.com/user-attachments/assets/21982cd2-da87-45f6-adaa-9c68e8a2b0e3" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/40612013-83ac-449d-9091-edc19d768c7b" width="250"/>
+  <img src="https://github.com/user-attachments/assets/21982cd2-da87-45f6-adaa-9c68e8a2b0e3" width="250"/>
+</p>
 
 ---
 
